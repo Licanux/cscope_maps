@@ -114,6 +114,22 @@ if has("cscope")
     nmap <C-\><C-\>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 
+    " Hitting CTRL-space *three times* before the search type does a new 
+    " tab instead of vim window split (vim 6 and up only)
+    "
+    " (Note: you may wish to put a 'set splitright' in your .vimrc
+    " if you prefer the new window on the right instead of the left
+
+    nmap <C-\><C-\><C-\>s :tab cs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\><C-\><C-\>g :tab cs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\><C-\><C-\>c :tab cs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\><C-\><C-\>t :tab cs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\><C-\><C-\>e :tab cs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\><C-\><C-\>f :tab cs find f <C-R>=expand("<cfile>")<CR><CR>	
+    nmap <C-\><C-\><C-\>i :tab cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
+    nmap <C-\><C-\><C-\>d :tab cs find d <C-R>=expand("<cword>")<CR><CR>
+
+
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
     " makes the vim window split horizontally, with search result displayed in
     " the new window.
@@ -161,5 +177,3 @@ if has("cscope")
     "set ttimeoutlen=100
 
 endif
-
-
